@@ -2,3 +2,4 @@ webbrowser
 threading
 dotenv
 os
+pyinstaller
