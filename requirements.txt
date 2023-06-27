@@ -1,0 +1,4 @@
+webbrowser
+threading
+dotenv
+os
