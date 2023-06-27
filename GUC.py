@@ -1,8 +1,14 @@
 import webbrowser
 import threading
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv()
+
 
 def open_url(url):
-    chrome_browser = webbrowser.get('C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s')
+    chrome_browser = webbrowser.get(os.getenv('chrome_path'))
     chrome_browser.open_new_tab(url)
 
 
