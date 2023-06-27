@@ -9,7 +9,7 @@ git clone https://github.com/M-Bahy/GUC-System-Opener.git
 cd GUC-System-Opener
 pip install -r  requirements.txt
 ```
-executable program avilable in the release section (Only supporting chrome in its default path) 
+executable program avilable in the Releases section on the right (Only supporting chrome in its default path) 
 # Additional command :
 If you changed the .env file then you need to run this command in the same terminal of the above commands
 ```bash
