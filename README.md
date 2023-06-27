@@ -11,7 +11,7 @@ pip install -r  requirements.txt
 ```
 executable program avilable in the release section (Only supporting chrome in its the default path) 
 # Additional command :
-If you changed the .env file then you need to run this additional command in the same terminal of the above commands
+If you changed the .env file then you need to run this command in the same terminal of the above commands
 ```bash
 pyinstaller -F -w -i icon.ico GUC.py
 ```
