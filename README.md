@@ -13,4 +13,4 @@ pip install -r  requirements.txt
 pyinstaller -F -w -i icon.ico GUC.py
 ```
 ⚠️ Make sure to disable you antivirus before running those commands as some antivirus interupt with the last command <br /><br />
-The new GUC.exe will be in the folder called "dist"
+The new GUC.exe will be in the folder called "dist" , create a shortcut for it on your desktop
