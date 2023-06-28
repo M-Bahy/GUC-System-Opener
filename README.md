@@ -1,5 +1,5 @@
 # GUC-System-Opener
-simple python script to open and log in cms , mail and portal with 1 click<br />
+simple python script to open and log in cms , mail and portal<br />
 ⚠️ this program is only tested for Windows
 # Setup :
 1) Install [Google Chrome](https://www.google.com/chrome/) , if you changed the default installation directory update your chrome.exe path in the env file <br />
