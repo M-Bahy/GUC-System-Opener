@@ -9,16 +9,16 @@ from selenium.webdriver.chrome.options import Options
 import time
 import os
 import threading
-from dotenv import load_dotenv
 
-load_dotenv()
-chrome_path = os.getenv('chrome_path') 
-Alive_time = os.getenv('aliveTime')
-mail = os.getenv('mail')
-cms = os.getenv('cms')
-portal = os.getenv('portal')
-username = os.getenv('username')
-password = os.getenv('password')
+with open('env.txt', 'r') as file:
+    Environment_Variables = file.read()
+Environment_Variables = Environment_Variables.split('\n')
+username = Environment_Variables[0]
+password = Environment_Variables[1]
+chrome_path = Environment_Variables[2]
+mail = "https://mail.guc.edu.eg/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fmail.guc.edu.eg%2fowa%2f"
+cms = "cms.guc.edu.eg/apps/student/HomePageStn.aspx"
+portal = "apps.guc.edu.eg/student_ext/Console.aspx"
 
 def open_mail(mail, username, password, driver):
     driver.get(mail)  
@@ -43,8 +43,8 @@ def open_portal(driver):
     driver.switch_to.window(driver.window_handles[-1])
         
 chrome_options = Options()
-if chrome_path:
-    chrome_options.binary_location = chrome_path
+
+chrome_options.binary_location = chrome_path
 driver = webdriver.Chrome( options=chrome_options)
 t1 = threading.Thread(target=open_mail, args=(mail, username, password, driver,))
 t2 = threading.Thread(target=open_cms, args=(driver,))
@@ -55,7 +55,7 @@ t2.start()
 t3.start()
 t2.join()
 t3.join()
-if Alive_time:
-    time.sleep(int(Alive_time))
-
-driver.quit()
+while True :
+    if not any(tab for tab in driver.window_handles if tab):
+        driver.quit()
+        break
