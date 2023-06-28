@@ -1,5 +1,3 @@
-webbrowser
-threading
-dotenv
-os
+python-dotenv
 pyinstaller
+selenium
